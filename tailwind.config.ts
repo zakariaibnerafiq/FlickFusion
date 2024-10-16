@@ -8,27 +8,37 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'custom-gradient': `
-          radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 1) 0px, transparent 0%),
-          radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
-          radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
-          radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
-          radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
-          radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
-          radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%)
-        `,
+      fontFamily: {
+        sans: ["Inter var", "system-ui"],
+        poppins: ["Poppins"],
+        montserrat: ["Montserrat"],
       },
+
       colors: {
-        'primary-dark': "#303030",
-        'primary-light': "#eaeaea",
-        'secondary-dark': "#202020",
-        'secondary-light': "#bfbfbf",
-        'primary-red': "#df2144",
-        'primary-blue': "#1b81d5",
-        'secondary-red': "#a81d37",
-        'secondary-blue': "#155d99",
+        rosewater: "#f5e0dc",
+        flamingo: "#f2cdcd",
+        pink: "#f5c2e7",
+        mauve: "#cba6f7",
+        red: "#f38ba8",
+        maroon: "#eba0ac",
+        peach: "#fab387",
+        yellow: "#f9e2af",
+        green: "#a6e3a1",
+        teal: "#94e2d5",
+        sky: "#89dceb",
+        sapphire: "#74c7ec",
+        blue: "#89b4fa",
+        lavender: "#b4befe",
+        text: "#cdd6f4",
+        subtext1: "#bac2de",
+        base: {
+          800 : "#1e1e2e",
+          700 : "#28283e",
+          600 : "#32324e",
+
+        }
         
+
       },
     },
   },

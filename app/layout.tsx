@@ -14,10 +14,10 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="en">
       <body className="">
-        <div className="main dark:bg-primary-dark bg-primary-light">
+        <div className="main bg-base-800">
           <div className="gradient" />
         </div>
-        <main className="app dark:text-primary-light text-primary-dark ">
+        <main className="app dark:text-primary-light text-primary-dark h-screen flex flex-col w-[90%] m-auto">
           <SessionProvider>
             <Navbar />
             {children}

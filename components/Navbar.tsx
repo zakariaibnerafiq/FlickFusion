@@ -6,8 +6,6 @@ const Navbar = () => {
   const { data: session } = useSession()
   console.log(session);
 
-
-
   const handleLogin = async () => {
     await signIn("google", {
       callbackUrl: "/",
@@ -19,9 +17,9 @@ const Navbar = () => {
     })
   }
   return (
-    <nav className="container m-auto px-10 flex items-center justify-between py-10">
+    <nav className="flex items-center justify-between py-5">
 
-      <h1 className="text-2xl font-bold text-primary-blue dark:text-primary-red">FlickFusion</h1>
+      <h1 className="bg-gradient-to-r from-maroon to-mauve bg-clip-text text-transparent text-2xl font-bold ">FlickFusion</h1>
 
       <ul className="flex items-center justify-center gap-3">
         <li><a href="/" className="text-lg">Home</a></li>
