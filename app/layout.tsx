@@ -1,7 +1,6 @@
-
 import type { Metadata } from "next";
 import "./globals.css";
-import { useEffect, useState } from "react";
+import Navbar from "@components/Navbar";
 // change color theme
 
 
@@ -13,8 +12,14 @@ export const metadata: Metadata = {
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="en">
-      <body className="bg-primary-light dark:bg-bg-primary-dark">
-        {children}
+      <body className="">
+        <div className="main dark:bg-primary-dark bg-primary-light">
+          <div className="gradient"/>
+        </div>
+        <main className="app dark:text-primary-light text-primary-dark ">
+          <Navbar />
+          {children}
+        </main>
       </body>
     </html>
   );
