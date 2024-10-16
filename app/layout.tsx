@@ -1,5 +1,9 @@
+
 import type { Metadata } from "next";
 import "./globals.css";
+import { useEffect, useState } from "react";
+// change color theme
+
 
 export const metadata: Metadata = {
   title: "FlickFusion",
@@ -9,7 +13,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-primary-light dark:bg-bg-primary-dark">
         {children}
       </body>
     </html>

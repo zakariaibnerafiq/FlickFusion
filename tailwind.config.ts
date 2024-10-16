@@ -9,8 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        'bg-primary-dark': "#303030",
+        'bg-primary-light': "#eaeaea",
+        'bg-secondary-dark': "#202020",
+        'bg-secondary-light': "#bfbfbf",
+        'component-primary-dark': "#df2144",
+        'component-primary-light': "#1b81d5",
+        'component-secondary-dark': "#a81d37",
+        'component-secondary-light': "#155d99",
+        'text-primary-dark': "#eaeaea",
+        'text-primary-light': "#303030",
+        'text-secondary-dark': "#bfbfbf",
+        'text-secondary-light': "#202020",
       },
     },
   },
