@@ -72,12 +72,21 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
         async jwt({ token, user, profile }) {
             if (user) {
                 token.id = profile?.sub
+
+                const dbUser = await db.user.findFirst({
+                    where: {
+                        email: profile!.email!,
+                        isAdmin: true
+                    }
+                })
+                token.isAdmin = dbUser?.isAdmin ?? false
             }
             return token
         },
         async session({ session, token }) {
             if (token.id) {
                 session.user.id = token.id as string
+                session.user.isAdmin = token.isAdmin as boolean
             }
             return session
         }
