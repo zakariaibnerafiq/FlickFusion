@@ -40,10 +40,10 @@ function MoviePage({ params }: MoviePageParam) {
                     frameBorder="0"
                     height={500}
                     width={900}
-                    allow="fullscreen" // Added allow attribute
+                    allow="fullscreen" 
                     allowFullScreen >
                 </iframe>
-                {movie && ( // Title is now outside the centered div
+                {movie && (
                     <div className='flex flex-col justify-start mt-4'>
                         <h1 className='text-white text-3xl'>{movie.title}</h1>
                         <h1 className='mt-2 ml-1  font-semibold'>
