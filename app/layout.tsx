@@ -13,11 +13,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
-      <body className="">
-        <div className="main bg-base-800">
-          <div className="gradient" />
-        </div>
-        <main className="app dark:text-primary-light text-primary-dark h-screen flex flex-col w-[90%] m-auto">
+      <body className="bg-base-800">
+        <main className="app">
           <SessionProvider>
             <Navbar />
             {children}

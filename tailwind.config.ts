@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["Inter var", "system-ui"],
-        poppins: ["Poppins"],
+        poppins: ["Poppins", "sans-serif"],
         montserrat: ["Montserrat"],
       },
 
