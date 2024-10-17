@@ -6,6 +6,10 @@ export async function middleware(request: NextRequest) {
     const session = await auth()
     let currentUrl = request.nextUrl
 
+    if (session && currentUrl.pathname.startsWith('/login')) {
+        return NextResponse.redirect(new URL('/', request.url))
+    }
+
     if (session && !session?.user.isAdmin && currentUrl.pathname.startsWith('/admin')) {
         return NextResponse.redirect(new URL('/', request.url))
     }
