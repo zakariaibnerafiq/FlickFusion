@@ -1,6 +1,7 @@
 "use client"
 import { useSession, signOut, signIn } from "next-auth/react"
 
+import Link from "next/link";
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -8,12 +9,6 @@ const Navbar = () => {
 
   const { data: session } = useSession()
   console.log(session);
-
-  const handleLogin = async () => {
-    await signIn("google", {
-      callbackUrl: "/",
-    })
-  }
   const handleLogout = async () => {
     await signOut({
       redirectTo: '/'
@@ -31,9 +26,9 @@ const Navbar = () => {
             onChange={() => setNavOpen(!navOpen)}
           />
           <div className="relative z-20 w-full flex justify-between lg:w-max md:px-0">
-            <a href="#" aria-label="logo" className="flex space-x-2 items-center">
+            <Link href="/" aria-label="logo" className="flex space-x-2 items-center">
               <span className="text-2xl font-bold text-white bg-gradient-to-r from-peach to-red text-transparent bg-clip-text">FlickFusion</span>
-            </a>
+            </Link>
 
             <div className="relative flex items-center lg:hidden max-h-10">
               <label
@@ -66,19 +61,19 @@ const Navbar = () => {
             <div className="text-gray-600 dark:text-gray-300 lg:pr-4 lg:w-auto w-full lg:pt-0">
               <ul className="tracking-wide font-medium lg:text-sm flex-col flex lg:flex-row gap-6 lg:gap-5">
                 <li>
-                  <a href="#" className="block transition hover:text-red">
+                  <Link href="/" className="block transition hover:text-red">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="block transition hover:text-red">
+                  <Link href="/about" className="block transition hover:text-red">
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="block transition hover:text-red">
+                  <Link href="/features" className="block transition hover:text-red">
                     Features
-                  </a>
+                  </Link>
                 </li>
               
               </ul>
@@ -97,12 +92,13 @@ const Navbar = () => {
               }
               {
                 session === null && (
-                  <a
-                    onClick={handleLogin}
+                  <Link
+                    href={"/login"}
+                    
                     className="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r from-peach to-red before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max cursor-pointer"
                   >
                     <span className="relative text-sm font-semibold text-base-800 font-poppins">Login</span>
-                  </a>
+                  </Link>
                 )
               }
             </div>

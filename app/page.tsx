@@ -12,7 +12,6 @@ export default function Home() {
                 <p className="mt-4 md:max-w-4xl sm:max-w-xl max-w-md md:text-xl sm:text-center text-slate-400">Introducing FlickFusion, your all-in-one movie streaming service that brings the magic of cinema right to your fingertips. <span className="sm:inline hidden">With a vast library of blockbusters, indie gems, timeless classics, and exclusive originals.</span></p>
             </div>
         </div>
-
       </div>
     </section>
   );
