@@ -3,14 +3,31 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-
+import { useRouter } from "next/navigation";
+import { useSession } from 'next-auth/react'
+import { signOut } from 'next-auth/react'
 function DemoApp() {
     // const accessToken = process.env.NEXT_PUBLIC_TMDB_ACCESS_TOKEN
     // console.log(accessToken);
 
     const [movies, setMovies] = useState([])
+    const { data: session } = useSession()
+    const router = useRouter()
 
+    const handleLogout = async () => {
+        await signOut({
+            redirectTo: '/'
+        })
+    }
+
+    const CheckSession = () => {
+        if (!session) {
+            router.push('/')
+        }
+    }
     useEffect(() => {
+        CheckSession()
+
         try {
             const fetchMovie = async () => {
                 const response = await axios.get('https://api.themoviedb.org/3/discover/movie', {
@@ -22,7 +39,7 @@ function DemoApp() {
                 setMovies(response.data.results)
 
             }
-            fetchMovie()
+            // fetchMovie()
         } catch (error) {
 
         }
@@ -33,6 +50,7 @@ function DemoApp() {
 
     return (
         <div className='py-32'>
+            <button onClick={handleLogout}>Logout</button>
             <div className='flex flex-wrap gap-6 justify-center items-center'>
                 {movies.map((movie: any) => (
                     <div key={movie.id} className='mt-4'>

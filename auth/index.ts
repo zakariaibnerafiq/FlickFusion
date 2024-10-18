@@ -1,19 +1,22 @@
 import db from "@lib/db";
 import NextAuth from "next-auth"
+import Email from "next-auth/providers/email";
 import Google from "next-auth/providers/google"
 
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
-    providers: [Google({
-        profile(profile) {
-            return {
-                id: profile.sub,
-                name: profile.name,
-                email: profile.email,
-                image: profile.image,
+    providers: [
+        Google({
+            profile(profile) {
+                return {
+                    id: profile.sub,
+                    name: profile.name,
+                    email: profile.email,
+                    image: profile.image,
+                }
             }
-        }
-    })],
+        }),
+    ],
 
     session: {
         strategy: "jwt",

@@ -4,11 +4,11 @@ import Link from 'next/link'
 import { useSession, signOut, signIn } from "next-auth/react"
 const Login = () => {
   const { data: session } = useSession()
-  console.log(session);
+  
 
   const handleLogin = async () => {
     await signIn("google", {
-      callbackUrl: "/",
+      callbackUrl: "/main",
     })
   }
   return (
