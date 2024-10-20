@@ -6,7 +6,6 @@ export default function AdminLayout({
 }>) {
     return (
         <div>
-            main layout
             {children}
         </div>
     );

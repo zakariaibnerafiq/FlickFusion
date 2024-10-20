@@ -7,8 +7,8 @@ import { useRouter } from "next/navigation";
 import { useSession } from 'next-auth/react'
 import { signOut } from 'next-auth/react'
 function DemoApp() {
-    // const accessToken = process.env.NEXT_PUBLIC_TMDB_ACCESS_TOKEN
-    // console.log(accessToken);
+    const accessToken = process.env.NEXT_PUBLIC_TMDB_ACCESS_TOKEN
+    console.log(accessToken);
 
     const [movies, setMovies] = useState([])
     const { data: session } = useSession()
@@ -39,7 +39,7 @@ function DemoApp() {
                 setMovies(response.data.results)
 
             }
-            // fetchMovie()
+            fetchMovie()
         } catch (error) {
 
         }
