@@ -6,7 +6,6 @@ import { useState } from 'react';
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
   const { data: session } = useSession()
-  console.log(session);
   const handleLogout = async () => {
     await signOut({
       redirectTo: '/'
