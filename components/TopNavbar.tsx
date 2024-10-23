@@ -14,7 +14,7 @@ const TopNavbar = () => {
 
     const fetchUserData = async () => {
         try {
-            const response = await axios.get('/api/user');
+            const response = await axios.get('/api/user/profile');
             setUser(response.data); // Set user data from axios response
         } catch (error) {
             console.error('Error fetching user data:', error);
@@ -28,29 +28,14 @@ const TopNavbar = () => {
     }, []);
 
     return (
-        <div className="flex flex-col flex-1 w-full">
-            <div className="z-10 py-4  shadow-md bg-base-700 ">
-                <div className="flex items-center justify-between h-full px-6 mx-auto">
-                    <div>
-                        <h1 className='text-3xl font-bold text-peach'>Admin Panel</h1>
-                    </div>
-                    <div>
-                        <div className='aspect-square w-12 h-12 bg-white rounded-full flex items-center justify-center text-3xl'>
-                        {user?.profilePic ? (
-                                <img
-                                    src={user.profilePic}
-                                    alt="Profile"
-                                    className="rounded-full w-full h-full object-cover"
-                                />
-                            ) : (
-                                <span className='text-3xl'>P</span> // Fallback if no profilePic
-                            )}
-                        </div>
-                    </div>
-                </div>
+        <div className="px-10 pt-10 flex flex-col">
+            <div className="space-y-1">
+                <h2 className="text-3xl font-bold tracking-tight text-peach">Welcome to Admin Panel</h2>
+                <p className="text-text text-sm"> <span className=" font-semibold">Admin Email:</span> {user?.email}</p>
             </div>
+            <div className="shrink-0 bg-base-200 px-10 h-[1px] my-6"></div>
         </div>
     )
-    }
+}
 
-    export default TopNavbar
+export default TopNavbar

@@ -8,11 +8,10 @@ export default function AdminLayout({
     return (
         <div className="h-screen flex flex-col">
             <TopNavbar />
-            <div className="flex h-full">
+            <div className="flex h-full px-10 gap-10">
                 <Sidebar />
                 {children}
             </div>
-            
         </div>
     );
 }
