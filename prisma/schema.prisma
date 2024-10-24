@@ -41,7 +41,7 @@ model Movie {
   genre       String
   rating      Float?
   image       String?
-
+  tmdbId      Int
   inWatchlistOf    User[]   @relation("UserWatchlist", fields: [inWatchlistOfIds], references: [id])
   inWatchlistOfIds String[] @db.ObjectId
 
